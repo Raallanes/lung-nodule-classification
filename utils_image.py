@@ -20,8 +20,10 @@ def image_scale(image):
 
 
 # Show Image
-def show_image(text, img):
+def show_image(text, img, beforeDestroy = None):
     cv2.imshow(text, img)
+    if beforeDestroy != None:
+        beforeDestroy()
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
